@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:naptah/loginScreens/SigninScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -13,6 +14,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
   bool isLastPage = false;
   final controller = PageController();
 
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
   Widget Pages({
     required String image,
     required String title,
@@ -137,11 +143,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                     )),
                                 child: TextButton(
                                   onPressed: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //       builder: (context) => const SignIn()),
-                                    // );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const SignIn()),
+                                    );
                                   },
                                   child: Text(
                                     "Log in",
