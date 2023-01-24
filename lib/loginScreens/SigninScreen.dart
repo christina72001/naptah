@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:naptah/homePage/Camera.dart';
 import 'package:naptah/loginScreens/SignupScreen.dart';
 import 'package:naptah/loginScreens/ForgetPassword.dart';
-import 'package:naptah/HomePage.dart/Camera.dart';
+
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
