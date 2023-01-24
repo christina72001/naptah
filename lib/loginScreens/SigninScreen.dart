@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:naptah/loginScreens/SignupScreen.dart';
+import 'package:naptah/loginScreens/ForgetPassword.dart';
+import 'package:naptah/HomePage.dart/Camera.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -14,7 +16,6 @@ class _SignInState extends State<SignIn> {
   bool isPasswordHidden = true;
   FocusNode emailFocusNode = FocusNode();
   FocusNode passwordFocusNode = FocusNode();
-
 
   @override
   Widget build(BuildContext context) {
@@ -40,31 +41,33 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 14,vertical: 7),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
                   child: TextFormField(
                     focusNode: emailFocusNode,
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: const BorderSide(
-                            width: 3,
-                            color: Color(0xff184A2C)),
+                            width: 3, color: Color(0xff184A2C)),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(color: const Color(0xffebfdf2)),
                       ),
-
                       hintText: 'Email',
                       filled: true,
-                      fillColor:Color(0xffEBFDF2),
-                      prefixIcon: const Icon(Icons.email,color:Color(0xff184A2C),),
-
+                      fillColor: Color(0xffEBFDF2),
+                      prefixIcon: const Icon(
+                        Icons.email,
+                        color: Color(0xff184A2C),
+                      ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 14,vertical: 7),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
                   child: TextFormField(
                     focusNode: passwordFocusNode,
                     keyboardType: TextInputType.visiblePassword,
@@ -73,26 +76,31 @@ class _SignInState extends State<SignIn> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: const BorderSide(
-                            width: 3,
-                            color: Color(0xff184A2C)),
+                            width: 3, color: Color(0xff184A2C)),
                       ),
 
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
-                        borderSide:
-                        BorderSide(color: const Color(0xffebfdf2),
-                        ),),
+                        borderSide: BorderSide(
+                          color: const Color(0xffebfdf2),
+                        ),
+                      ),
 
                       hintText: 'Password',
                       filled: true,
-                      fillColor:Color(0xffEBFDF2),
-                      prefixIcon: const Icon(Icons.lock,color:Color(0xff184A2C),),
-                      suffixIcon: IconButton(color:Color(0xff184A2C),
+                      fillColor: Color(0xffEBFDF2),
+                      prefixIcon: const Icon(
+                        Icons.lock,
+                        color: Color(0xff184A2C),
+                      ),
+                      suffixIcon: IconButton(
+                        color: Color(0xff184A2C),
                         onPressed: () {
                           isPasswordHidden = !isPasswordHidden;
                           setState(() {});
                         },
-                        icon: Icon(color:Color(0xff184A2C),
+                        icon: Icon(
+                            color: Color(0xff184A2C),
                             isPasswordHidden
                                 ? Icons.visibility
                                 : Icons.visibility_off),
@@ -110,17 +118,21 @@ class _SignInState extends State<SignIn> {
                       child: TextButton(
                         style: ButtonStyle(
                           foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.blue),
+                              MaterialStateProperty.all<Color>(Colors.blue),
                         ),
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const SignUp()),
+                                builder: (context) => const ForgetPassword()),
                           );
                         },
                         child: Text(
-                            'Forget PassWord ?'),
+                          'Forget PassWord ?',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
                       ),
                     )
                   ],
@@ -135,7 +147,13 @@ class _SignInState extends State<SignIn> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Camera()),
+                        );
+                      },
                       child: const Text(
                         'Sign in',
                         style: TextStyle(
@@ -154,7 +172,7 @@ class _SignInState extends State<SignIn> {
                     TextButton(
                       style: ButtonStyle(
                         foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.blue),
+                            MaterialStateProperty.all<Color>(Colors.blue),
                       ),
                       onPressed: () {
                         Navigator.push(
@@ -163,20 +181,20 @@ class _SignInState extends State<SignIn> {
                               builder: (context) => const SignUp()),
                         );
                       },
-                      child: Text('Sign Up'),
+                      child: Text('Register Now'),
                     )
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 170),
-                  child: Image(
-                    width: 420,
-                    height: 270,
-                    image: AssetImage(
-                      'assets/try33.png',
-                    ),
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(left: 170),
+                //   child: Image(
+                //     width: 420,
+                //     height: 270,
+                //     image: AssetImage(
+                //       'assets/try33.png',
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),

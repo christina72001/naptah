@@ -19,6 +19,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     controller.dispose();
     super.dispose();
   }
+
   Widget Pages({
     required String image,
     required String title,
@@ -90,7 +91,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         'We provide a plan and appropriate methods for plant care and better production.'),
               ],
             ),
-
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -107,9 +107,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 height: 58,
                                 width: 291,
                                 decoration: BoxDecoration(
-                                    color: Color(0xff184A2C),
+                                    color: Colors.white,
                                     borderRadius:
-                                        BorderRadiusDirectional.circular(22)),
+                                        BorderRadiusDirectional.circular(22),
+                                        border: Border.all(
+                                      color: Color(0xff184A2C),
+                                      width: 2.5,
+                                    ),),
                                 child: TextButton(
                                   onPressed: () {
                                     // Navigator.push(
@@ -119,10 +123,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                     // );
                                   },
                                   child: Text(
-                                    "Get started",
+                                    "Get Started",
                                     style: GoogleFonts.roboto(
                                       textStyle: TextStyle(
-                                          color: Colors.white, fontSize: 25),
+                                          color: Color(0xff184A2C),
+                                          fontSize: 25),
                                     ),
                                   ),
                                 ),
@@ -134,13 +139,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 height: 58,
                                 width: 291,
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    
+                                    color: Color(0xff184A2C),
                                     borderRadius:
                                         BorderRadiusDirectional.circular(22),
-                                    border: Border.all(
-                                      color: Color(0xff184A2C),
-                                      width: 2.5,
-                                    )),
+                                    ),
                                 child: TextButton(
                                   onPressed: () {
                                     Navigator.push(
@@ -150,11 +153,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                     );
                                   },
                                   child: Text(
-                                    "Log in",
+                                    "Log In",
                                     style: GoogleFonts.roboto(
                                       textStyle: TextStyle(
-                                          color: Color(0xff184A2C),
-                                          fontSize: 25),
+                                          color: Colors.white, fontSize: 25),
+                                    
                                     ),
                                   ),
                                 ),
@@ -165,7 +168,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-
                             SizedBox(
                               height: 20,
                             ),
