@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/loginScreens/SigninScreen.dart';
+import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/loginScreens/SignupScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -116,12 +117,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                     ),),
                                 child: TextButton(
                                   onPressed: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //       builder: (context) => const SignIn()),
-                                    // );
-                                  },
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+          );
+        },
                                   child: Text(
                                     "Get Started",
                                     style: GoogleFonts.roboto(
@@ -149,7 +149,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => const SignIn()),
+                                          builder: (context) => const SignUp()),
                                     );
                                   },
                                   child: Text(

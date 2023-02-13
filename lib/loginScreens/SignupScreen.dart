@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naptah/loginScreens/SigninScreen.dart';
+import 'package:naptah/mainPage/Home/homePage.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -203,13 +204,19 @@ class _SignUpState extends State<SignUp> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+               Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePage()),
+                  );
+            },
                     child: const Text(
                       'Sign up',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
+                        
                       ),
                     ),
                   ),

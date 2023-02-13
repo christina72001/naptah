@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:naptah/homePage/Camera.dart';
+import 'package:naptah/mainPage/Home/Camera.dart';
 import 'package:naptah/loginScreens/SignupScreen.dart';
 import 'package:naptah/loginScreens/ForgetPassword.dart';
-
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -186,16 +185,16 @@ class _SignInState extends State<SignIn> {
                     )
                   ],
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.only(left: 170),
-                //   child: Image(
-                //     width: 420,
-                //     height: 270,
-                //     image: AssetImage(
-                //       'assets/try33.png',
-                //     ),
-                //   ),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 170),
+                  child: Image(
+                    width: 420,
+                    height: 270,
+                    image: AssetImage(
+                      'assets/try33.png',
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

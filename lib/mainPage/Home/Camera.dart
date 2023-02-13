@@ -1,6 +1,8 @@
+
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:naptah/mainPage/Home/homePage.dart';
 import 'package:naptah/loginScreens/SigninScreen.dart';
 
 class Camera extends StatefulWidget {
@@ -44,19 +46,21 @@ class _CameraState extends State<Camera> {
             //back_button
 
             Padding(
-              padding: const EdgeInsets.only(right: 327),
+              padding: const EdgeInsets.only(right: 310),
               child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SignIn()),
-                  );
-                },
-                child: Icon(
+                child: const Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,
                   size: 30,
+                  
                 ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePage()),
+                  );
+                },
+                
               ),
             ),
 

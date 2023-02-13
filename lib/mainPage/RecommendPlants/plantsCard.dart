@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/homePage/plants_card_data.dart';
+import 'package:naptah/mainPage/RecommendPlants/Coffeaplants.dart';
+import 'package:naptah/mainPage/RecommendPlants/plants_card_data.dart';
+import 'package:naptah/mainPage/RecommendPlants/spathiphyhllum.dart';
+
 
 class PlantsCard extends StatelessWidget {
   const PlantsCard({Key? key}) : super(key: key);
@@ -8,7 +11,7 @@ class PlantsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
+      padding:  EdgeInsets.only(
         top: 10.0,bottom: 15,
       ),
       child: Container(
@@ -25,23 +28,37 @@ class PlantsCard extends StatelessWidget {
           itemBuilder: (context, index) => _plantsCard(
             context,
             plantsCardsList[index],
+            index,
           ),
         ),
       ),
     );
   }
 
-  Widget _plantsCard(BuildContext context, Plants plants) {
+  Widget _plantsCard(BuildContext context, Plants plants, int index) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        if (index == 0) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const spathiphyhllum()),
+          );
+        } 
+        if (index == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const coffeaPlants()),
+          );
+        } 
+      },
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadiusDirectional.all(Radius.circular(15)),
-          color: Color(0xffD4C1A5),
+          color: const Color(0xffD4C1A5),
         ),
         width: 170,
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
