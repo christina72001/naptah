@@ -3,14 +3,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:naptah/onboardingScreens/onboardingPage.dart';
-import 'package:naptah/loginScreens/SigninScreen.dart';
-import 'package:naptah/loginScreens/SignupScreen.dart';
-import 'mainPage/popularPlants/vegetables.dart';
-import 'mainPage/premium/premiumPage.dart';
-import 'mainPage/test.dart';
 import 'package:naptah/shared/blocObserver.dart';
-import 'mainPage/test2.dart';
-import 'mainPage/premium/paymentDetails.dart';
 
 
 void main() {

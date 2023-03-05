@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:naptah/homePage/bottom_bar.dart';
-import 'package:naptah/homePage/plantsCard.dart';
-import 'package:naptah/homePage/popularPlants/popularCard.dart';
-
+import 'package:naptah/mainPage/RecommendPlants/plantsCard.dart';
+import 'package:naptah/mainPage/popularPlants/popularCard.dart';
 import 'package:naptah/sideBarMenu/sideBarMenu.dart';
 
 

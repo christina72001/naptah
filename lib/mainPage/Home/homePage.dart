@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:naptah/mainPage/Home/bottom_bar.dart';
 import 'package:naptah/mainPage/RecommendPlants/plantsCard.dart';
 import 'package:naptah/mainPage/popularPlants/popularCard.dart';
-import 'package:naptah/mainPage/Home/sideBarMenu.dart';
+import 'package:naptah/sideBarMenu/sideBarMenu.dart';
 import '../premium/premiumPage.dart';
 import 'Camera.dart';
 
