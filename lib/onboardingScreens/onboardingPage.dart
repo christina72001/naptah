@@ -35,23 +35,23 @@ class _OnboardingPageState extends State<OnboardingPage> {
               fit: BoxFit.cover,
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             Text(
               title,
-              style: GoogleFonts.roboto(
-                textStyle: TextStyle(color: Color(0xff184A2C), fontSize: 40),
+              style: GoogleFonts.merriweatherSans(
+                textStyle: TextStyle(color: Color(0xff184A2C), fontSize: 30),
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             Text(
               description,
-              style: GoogleFonts.roboto(
+              style: GoogleFonts.merriweatherSans(
                 textStyle: TextStyle(
                   color: Color(0xff060706),
-                  fontSize: 21,
+                  fontSize: 20,
                 ),
               ),
               textAlign: TextAlign.center,
@@ -71,7 +71,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             PageView(
               controller: controller,
               onPageChanged: (index) {
-                setState(() => isLastPage = index == 2);
+                setState(() => isLastPage = index == 3);
               },
               children: [
                 Pages(
@@ -89,38 +89,65 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     title: 'Care',
                     description:
                         'We provide a plan and appropriate methods for plant care and better production.'),
+                Pages(
+                    image: "assets/social-media.png",
+                    title: "Social Community",
+                    description:
+                        'A communication circle to share and experiences related to plants and to communicate with experts.'),
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 390,
+                  height:400,
+                ),
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      SmoothPageIndicator(
+                        controller: controller,
+                        count: 4,
+                        axisDirection: Axis.horizontal,
+                        effect: ExpandingDotsEffect(
+                          spacing: 8.0,
+                          dotWidth: 10.0,
+                          dotHeight: 10,
+                          paintStyle: PaintingStyle.fill,
+                          strokeWidth: 2,
+                          dotColor: Color(0xffCFCDCD),
+                          activeDotColor: Color(0xff184A2C),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 70),
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   child: isLastPage
                       ? Center(
                           child: Column(
                             children: [
                               Container(
-                                height: 58,
+                                height: 55,
                                 width: 291,
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius:
-                                        BorderRadiusDirectional.circular(22),
-                                        border: Border.all(
-                                      color: Color(0xff184A2C),
-                                      width: 2.5,
-                                    ),),
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(22),
+                                  border: Border.all(
+                                    color: Color(0xff184A2C),
+                                    width: 2.5,
+                                  ),
+                                ),
                                 child: TextButton(
                                   onPressed: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //       builder: (context) => const SignIn()),
-                                    // );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const SignIn()),
+                                    );
                                   },
                                   child: Text(
                                     "Get Started",
@@ -136,14 +163,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 height: 15,
                               ),
                               Container(
-                                height: 58,
+                                height: 55,
                                 width: 291,
                                 decoration: BoxDecoration(
-                                    
-                                    color: Color(0xff184A2C),
-                                    borderRadius:
-                                        BorderRadiusDirectional.circular(22),
-                                    ),
+                                  color: Color(0xff184A2C),
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(22),
+                                  border: Border.all(
+                                    color: Colors.white,
+                                    width: 2.5,
+                                  ),
+                                ),
                                 child: TextButton(
                                   onPressed: () {
                                     Navigator.push(
@@ -157,7 +187,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                     style: GoogleFonts.roboto(
                                       textStyle: TextStyle(
                                           color: Colors.white, fontSize: 25),
-                                    
                                     ),
                                   ),
                                 ),
@@ -168,33 +197,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Center(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SmoothPageIndicator(
-                                    controller: controller,
-                                    count: 3,
-                                    axisDirection: Axis.horizontal,
-                                    effect: ExpandingDotsEffect(
-                                      spacing: 8.0,
-                                      dotWidth: 10.0,
-                                      dotHeight: 10,
-                                      paintStyle: PaintingStyle.fill,
-                                      strokeWidth: 2,
-                                      dotColor: Color(0xffCFCDCD),
-                                      activeDotColor: Color(0xff184A2C),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 40,
-                            ),
                             Center(
                               child: Container(
                                 height: 58,
@@ -229,4 +231,3 @@ class _OnboardingPageState extends State<OnboardingPage> {
     );
   }
 }
-//

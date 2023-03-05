@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naptah/homePage/Camera.dart';
+import 'package:naptah/loginScreens/ForgetPassword.dart';
 import 'package:naptah/loginScreens/SignupScreen.dart';
 // import 'package:naptah/loginScreens/ForgetPassword.dart';
 
@@ -122,11 +123,11 @@ class _SignInState extends State<SignIn> {
                               MaterialStateProperty.all<Color>(Colors.blue),
                         ),
                         onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       // builder: (context) => const ForgetPassword()),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ForgetPassword()),
+                          );
                         },
                         child: Text(
                           'Forget PassWord ?',

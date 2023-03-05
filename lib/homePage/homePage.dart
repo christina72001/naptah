@@ -3,7 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:naptah/homePage/bottom_bar.dart';
 import 'package:naptah/homePage/plantsCard.dart';
 import 'package:naptah/homePage/popularPlants/popularCard.dart';
-import 'package:naptah/homePage/popularPlants/sideBarMenu.dart';
+
+import 'package:naptah/sideBarMenu/sideBarMenu.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

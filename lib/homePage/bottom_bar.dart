@@ -7,7 +7,7 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: CircularNotchedRectangle(),
-      notchMargin: 6.0,
+      notchMargin: 10.0,
       color: Colors.transparent,
       elevation: 15.0,
       clipBehavior: Clip.antiAlias,
