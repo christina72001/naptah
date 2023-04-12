@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/Home/homePage.dart';
 import 'package:naptah/loginScreens/SignupScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

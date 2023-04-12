@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:naptah/mainPage/Home/Profile.dart';
-import 'package:naptah/mainPage/premium/premiumPage.dart';
+import 'package:naptah/Home/Profile.dart';
+import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/Home/premium/premiumPage.dart';
+import 'package:naptah/test.dart';
+
+import '../Scanning/resultScreen.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -31,8 +35,17 @@ class BottomBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Image.asset('assets/bottomIcon/home_Icon.png',
-                      color: const Color(0xff707070)),
+                  GestureDetector(
+                     onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>  resultScreen())
+                      );
+                    },
+                    child: Image.asset('assets/bottomIcon/home_Icon.png',
+                        color: const Color(0xff707070)),
+                  ),
                   Image.asset('assets/bottomIcon/plant_Icon.png',
                       color: const Color(0xff707070)),
                 ],

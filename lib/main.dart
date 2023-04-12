@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:naptah/onboardingScreens/onboardingPage.dart';
 import 'package:naptah/shared/blocObserver.dart';
-
+import 'Scanning/RecommendationSreen.dart';
+import 'Scanning/resultScreen.dart';
 
 void main() {
   Bloc.observer = MyBlocObserver();
@@ -31,3 +32,5 @@ class MyApp extends StatelessWidget {
     //  
   }
 }
+
+

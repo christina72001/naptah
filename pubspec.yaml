@@ -56,6 +56,9 @@ dependencies:
   scan: ^1.6.0
   custom_clippers: ^2.0.0
   flutter_switch: ^0.3.2
+  qr_flutter: ^4.0.0
+  camera: ^0.10.3+2
+  readmore: ^2.2.0
   # path: ^1.8.2
 
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:naptah/mainPage/Home/Camera.dart';
 import 'package:naptah/loginScreens/SignupScreen.dart';
 import 'package:naptah/loginScreens/ForgetPassword.dart';
+import 'package:naptah/Home/homePage.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -151,7 +151,7 @@ class _SignInState extends State<SignIn> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Camera()),
+                              builder: (context) => const HomePage()),
                         );
                       },
                       child: const Text(

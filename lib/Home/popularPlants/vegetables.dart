@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
-import 'package:naptah/mainPage/popularPlants/lemon.dart';
+import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/Home/popularPlants/lemon.dart';
 
 class vegetables extends StatefulWidget {
   const vegetables({super.key});

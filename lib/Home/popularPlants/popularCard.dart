@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/popularPlants/popular_card_data.dart';
-import 'package:naptah/mainPage/popularPlants/vegetables.dart';
+import 'package:naptah/Home/popularPlants/popular_card_data.dart';
+import 'package:naptah/Home/popularPlants/vegetables.dart';
  
 
 class PopularCard extends StatelessWidget {

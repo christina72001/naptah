@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/Home/homePage.dart';
 import 'package:naptah/loginScreens/SigninScreen.dart';
-import 'package:naptah/mainPage/test.dart';
-import 'package:naptah/mainPage/test2.dart';
-import 'package:naptah/mainPage/premium/paymentDetails.dart';
+import 'package:naptah/Home/premium/paymentDetails.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class premiumPage extends StatefulWidget {

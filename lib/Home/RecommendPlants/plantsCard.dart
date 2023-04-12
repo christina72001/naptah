@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/RecommendPlants/Coffeaplants.dart';
-import 'package:naptah/mainPage/RecommendPlants/plants_card_data.dart';
-import 'package:naptah/mainPage/RecommendPlants/spathiphyhllum.dart';
+import 'package:naptah/Home/RecommendPlants/Coffeaplants.dart';
+import 'package:naptah/Home/RecommendPlants/plants_card_data.dart';
+import 'package:naptah/Home/RecommendPlants/spathiphyhllum.dart';
 
 
 class PlantsCard extends StatelessWidget {

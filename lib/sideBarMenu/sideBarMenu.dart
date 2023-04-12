@@ -6,6 +6,7 @@ import 'package:naptah/sideBar_Pages/people.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:naptah/sideBar_Pages/q&a/Q&A.dart';
 
+
 class SideBarMenu extends StatefulWidget {
   const SideBarMenu({Key? key}) : super(key: key);
 
@@ -18,6 +19,12 @@ class _SideBarMenuState extends State<SideBarMenu> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+       child: IconTheme(
+    data: IconThemeData(
+      color: Colors.blue, // set the color of the icon to blue 
+    ),
+       
+      // backgroundColor: Color(0xff707070),
       child: Material(
         color: Colors.white,
         child: Padding(
@@ -86,6 +93,7 @@ class _SideBarMenuState extends State<SideBarMenu> {
             ],
           ),
         ),
+      ),
       ),
     );
   }

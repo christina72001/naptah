@@ -1,11 +1,11 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/bottom_bar.dart';
-import 'package:naptah/mainPage/RecommendPlants/plantsCard.dart';
-import 'package:naptah/mainPage/popularPlants/popularCard.dart';
+import 'package:naptah/Home/bottom_bar.dart';
+import 'package:naptah/Home/RecommendPlants/plantsCard.dart';
+import 'package:naptah/Home/popularPlants/popularCard.dart';
 import 'package:naptah/sideBarMenu/sideBarMenu.dart';
-import '../premium/premiumPage.dart';
-import 'Camera.dart';
+import 'package:image_picker/image_picker.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,11 +15,40 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+    // File image;
+  final picker = ImagePicker();
+
+  Future getImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+     setState(() {
+      if (pickedFile != null) {
+        // _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       drawer: SideBarMenu(),
+//       AppBar(
+//   title: Text('My App'),
+//   leading: IconButton(
+//     icon: Icon(Icons.menu), // set the icon for the drawer button
+//     color: Colors.white, // set the color of the icon
+//     iconSize: 30, // set the size of the icon
+//     padding: EdgeInsets.all(10), // set the padding around the icon
+//     splashRadius: 20, // set the splash radius of the icon
+//     onPressed: () {
+//       // open the drawer when the button is pressed
+//       Scaffold.of(context).openDrawer();
+//     },
+//   ),
+// );
+
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -88,10 +117,11 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const Camera()),
-          );
+          getImage();
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(builder: (context) => const Camera()),
+          // );
         },
         backgroundColor: Color(0xff184A2C),
         child: Image.asset(
