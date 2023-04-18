@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:naptah/Home/bottom_bar.dart';
 import 'package:naptah/Home/homePage.dart';
 import 'package:naptah/Home/popularPlants/lemon.dart';
 
@@ -38,7 +39,7 @@ class _vegetablesState extends State<vegetables> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) =>  BottomBar()),
               );
             },
           ),

@@ -12,17 +12,18 @@ class PlantsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:  EdgeInsets.only(
-        top: 10.0,bottom: 15,
+        bottom: 10,top: 5,
       ),
       child: Container(
-        height: 190,
+        height: MediaQuery.of(context).size.height*0.2,
+        
         child: ListView.separated(
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemCount: plantsCardsList.length,
           separatorBuilder: (context, index) {
             return SizedBox(
-              width: 15,
+              width: 8,
             );
           },
           itemBuilder: (context, index) => _plantsCard(
@@ -56,13 +57,14 @@ class PlantsCard extends StatelessWidget {
           borderRadius: BorderRadiusDirectional.all(Radius.circular(15)),
           color: const Color(0xffD4C1A5),
         ),
-        width: 170,
+         width:MediaQuery.of(context).size.height*0.18 ,
         child: Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('${plants.name}',
+              
                   style: GoogleFonts.roboto(
                       textStyle: TextStyle(
                           color: Colors.black,
@@ -72,21 +74,22 @@ class PlantsCard extends StatelessWidget {
                 height: 5,
               ),
               Text('${plants.description}',
+              maxLines: 3,
                   style: GoogleFonts.roboto(
                       textStyle: TextStyle(
                         color: Colors.black,
                         fontSize: 10,
                       ))),
               SizedBox(
-                height: 10,
+                height: 7,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Image(
                     image: AssetImage('${plants.image.toString()}'),
-                    height: 70,
-                    width: 70,
+                    height: 60,
+                    width: 60,
                   )
                 ],
               ),

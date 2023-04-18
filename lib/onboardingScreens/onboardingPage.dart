@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/Home/bottom_bar.dart';
 import 'package:naptah/loginScreens/SignupScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -119,7 +119,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                   onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
+            MaterialPageRoute(builder: (context) =>  BottomBar()),
           );
         },
                                   child: Text(

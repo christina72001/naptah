@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:naptah/Home/bottom_bar.dart';
 import 'package:naptah/Home/homePage.dart';
 
 class spathiphyhllum extends StatefulWidget {
@@ -35,7 +36,7 @@ class _spathiphyhllumState extends State<spathiphyhllum> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
+                  MaterialPageRoute(builder: (context) => BottomBar()),
                 );
               },
             ),
