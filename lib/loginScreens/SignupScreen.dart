@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naptah/loginScreens/SigninScreen.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/Home/homePage.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
