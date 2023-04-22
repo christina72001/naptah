@@ -12,7 +12,7 @@ class PlantsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:  EdgeInsets.only(
-        top: 10.0,bottom: 15,
+        top: 10.0,bottom: 15,left: 10, right: 10
       ),
       child: Container(
         height: 190,

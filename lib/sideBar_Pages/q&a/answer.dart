@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/homePage/homePage.dart';
+
 import 'package:naptah/sideBar_Pages/q&a/Q&A.dart';
 
 class Answers extends StatelessWidget {
@@ -32,14 +32,18 @@ class Answers extends StatelessWidget {
                 //     icon: Icon(Icons.arrow_back_ios,color: Color(0xff707070),size: 30,)
                 // ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20,top: 120,right: 20,),
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                    top: 120,
+                    right: 20,
+                  ),
                   child: Text(
                     'How to save plant orange and to get good fruits?',
                     style: GoogleFonts.merriweatherSans(
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.normal),
-                    textAlign:TextAlign.justify,
+                    textAlign: TextAlign.justify,
                   ),
                 ),
               ],

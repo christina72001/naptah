@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:naptah/mainPage/Home/bottom_bar.dart';
 import 'package:naptah/mainPage/Home/homePage.dart';
 import 'package:naptah/mainPage/popularPlants/lemon.dart';
 
@@ -65,6 +66,17 @@ class _vegetablesState extends State<vegetables> {
             }),
           ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color(0xff184A2C),
+        child: Image.asset(
+          'assets/bottomIcon/camera_Icon.png',
+          width: 30,
+          height: 30,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomBar(),
     );
   }
 }

@@ -90,6 +90,7 @@ class PopularCard extends StatelessWidget {
             ),
           ],
         ),
+
       ),
     );
   }

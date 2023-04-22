@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/sideBarMenu/aboutUs.dart';
 import 'package:naptah/sideBarMenu/side_bar_items.dart';
+import 'package:naptah/sideBar_Pages/aboutUs.dart';
+import 'package:naptah/sideBar_Pages/feedback.dart';
+import 'package:naptah/sideBar_Pages/help.dart';
 import 'package:naptah/sideBar_Pages/people.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:naptah/sideBar_Pages/q&a/Q&A.dart';
@@ -15,6 +17,8 @@ class SideBarMenu extends StatefulWidget {
 
 class _SideBarMenuState extends State<SideBarMenu> {
   bool status = false;
+  List<String> languages = ['English', 'العربية'];
+  String? selectedLang = 'English';
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -31,52 +35,76 @@ class _SideBarMenuState extends State<SideBarMenu> {
               const Divider(
                 thickness: 1,
                 height: 10,
-                color: Colors.black,
+                color: Color(0xff707070),
               ),
               DrawerItems(
-                name: 'MyProfile',
-                icon: Icons.account_circle,
+                name: 'Language',
+                icon:Icons.language,
                 onPressed: () => onItemPressed(context, index: 0),
               ),
-             Row(
-               children: [
-                 Icon(Icons.notifications,size: 20,),
-                 SizedBox(width: 20,),
-                 Text("Notifications", style: GoogleFonts.merriweatherSans(
-                     fontSize: 15, color: Colors.black),),
-                 SizedBox(width: 60,),
-                  Container(child: FlutterSwitch(
-                    width: 50.0,
-                    height: 30.0,
-                    activeColor: Color(0xff519A56),
-                    // valueFontSize: 25.0,
-                    toggleSize: 15.0,
-                    value: status,
-                    borderRadius: 30.0,
-                    padding: 5.0,
-                    // showOnOff: true,
-                    onToggle: (val) {
-                      setState(() {
-                        status = val;
-                      });
-                    },
-                  ),),
-               ],
-             ),
-              // DrawerItems(
-              //   name: 'Send Feedback',
-              //   icon: Icons.feedback,
-              //   onPressed: () => onItemPressed(context, index: 2),
+              DrawerItems(
+                name: 'Send Feedback',
+                icon:Icons.feedback_rounded,
+                onPressed: () => onItemPressed(context, index: 1),
+              ),
+
+              // Row(
+              //   children: [
+              //     Icon(
+              //       Icons.notifications,
+              //       size: 20,
+              //     ),
+              //     SizedBox(
+              //       width: 20,
+              //     ),
+              //     Text(
+              //       "Notifications",
+              //       style: GoogleFonts.merriweatherSans(
+              //           fontSize: 15, color: Colors.black),
+              //     ),
+              //     SizedBox(
+              //       width: 150,
+              //     ),
+              //     Container(
+              //       child: FlutterSwitch(
+              //         width: 50.0,
+              //         height: 30.0,
+              //         activeColor: Color(0xff519A56),
+              //         // valueFontSize: 25.0,
+              //         toggleSize: 15.0,
+              //         value: status,
+              //         borderRadius: 30.0,
+              //         padding: 5.0,
+              //         // showOnOff: true,
+              //         onToggle: (val) {
+              //           setState(() {
+              //             status = val;
+              //           });
+              //         },
+              //       ),
+              //     ),
+              //   ],
               // ),
+
               DrawerItems(
                 name: 'About Us',
                 icon: Icons.people,
-                onPressed: () => onItemPressed(context, index: 1),
+                onPressed: () => onItemPressed(context, index: 2),
               ),
               DrawerItems(
                 name: 'Q&A',
-                icon: Icons.question_answer,
-                onPressed: () => onItemPressed(context, index: 2),
+                icon: Icons.question_answer_sharp,
+                onPressed: () => onItemPressed(context, index: 3),
+              ),
+              DrawerItems(
+                name: 'Help',
+                icon: Icons.help_outline_rounded,
+                onPressed: () => onItemPressed(context, index: 4),
+              ),
+              DrawerItems(
+                name: 'Saves',
+                icon: Icons.save,
+                onPressed: () => onItemPressed(context, index: 5),
               ),
               // DrawerItems(
               //   name: 'Log Out',
@@ -99,11 +127,17 @@ class _SideBarMenuState extends State<SideBarMenu> {
         break;
       case 1:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const AboutUs()));
+            context, MaterialPageRoute(builder: (context) => const SendFeedBack()));
         break;
       case 2:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const Questions()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const AboutUs()));
+        break;
+      case 3:
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>const Questions()));
+        break;
+      case 4:
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>const Help()));
         break;
       default:
         Navigator.pop(context);

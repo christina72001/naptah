@@ -27,7 +27,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     required String description,
   }) =>
       Padding(
-        padding: const EdgeInsets.all(50.0),
+        padding: const EdgeInsets.all(35.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -52,7 +52,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               style: GoogleFonts.roboto(
                 textStyle: TextStyle(
                   color: Color(0xff060706),
-                  fontSize: 21,
+                  fontSize: 20,
                 ),
               ),
               textAlign: TextAlign.center,
@@ -72,7 +72,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             PageView(
               controller: controller,
               onPageChanged: (index) {
-                setState(() => isLastPage = index == 2);
+                setState(() => isLastPage = index == 3);
               },
               children: [
                 Pages(
@@ -90,6 +90,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     title: 'Care',
                     description:
                         'We provide a plan and appropriate methods for plant care and better production.'),
+                Pages(
+                    image: "assets/email.png",
+                    title: 'Speak with expert',
+                    description:
+                        "Communication with experts in the field of plants and diseases for more accurate information"),
               ],
             ),
             Column(
@@ -104,46 +109,36 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ? Center(
                           child: Column(
                             children: [
-                              Container(
-                                height: 58,
-                                width: 291,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius:
-                                        BorderRadiusDirectional.circular(22),
-                                        border: Border.all(
-                                      color: Color(0xff184A2C),
-                                      width: 2.5,
-                                    ),),
-                                child: TextButton(
-                                  onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
-          );
-        },
-                                  child: Text(
-                                    "Get Started",
-                                    style: GoogleFonts.roboto(
-                                      textStyle: TextStyle(
-                                          color: Color(0xff184A2C),
-                                          fontSize: 25),
+                              Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SmoothPageIndicator(
+                                      controller: controller,
+                                      count: 4,
+                                      axisDirection: Axis.horizontal,
+                                      effect: ExpandingDotsEffect(
+                                        spacing: 8.0,
+                                        dotWidth: 10.0,
+                                        dotHeight: 10,
+                                        paintStyle: PaintingStyle.fill,
+                                        strokeWidth: 2,
+                                        dotColor: Color(0xffCFCDCD),
+                                        activeDotColor: Color(0xff184A2C),
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
                               ),
-                              SizedBox(
-                                height: 15,
-                              ),
+                              SizedBox(height: 15,),
                               Container(
                                 height: 58,
                                 width: 291,
                                 decoration: BoxDecoration(
-                                    
-                                    color: Color(0xff184A2C),
-                                    borderRadius:
-                                        BorderRadiusDirectional.circular(22),
-                                    ),
+                                  color: Color(0xff184A2C),
+                                  borderRadius:
+                                  BorderRadiusDirectional.circular(22),
+                                ),
                                 child: TextButton(
                                   onPressed: () {
                                     Navigator.push(
@@ -157,11 +152,45 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                     style: GoogleFonts.roboto(
                                       textStyle: TextStyle(
                                           color: Colors.white, fontSize: 25),
-                                    
                                     ),
                                   ),
                                 ),
                               ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Container(
+                                height: 58,
+                                width: 291,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(22),
+                                  border: Border.all(
+                                    color: Color(0xff184A2C),
+                                    width: 2.5,
+                                  ),
+                                ),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HomePage()),
+                                    );
+                                  },
+                                  child: Text(
+                                    "Get Started",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: TextStyle(
+                                          color: Color(0xff184A2C),
+                                          fontSize: 25),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
                             ],
                           ),
                         )
@@ -177,7 +206,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 children: [
                                   SmoothPageIndicator(
                                     controller: controller,
-                                    count: 3,
+                                    count: 4,
                                     axisDirection: Axis.horizontal,
                                     effect: ExpandingDotsEffect(
                                       spacing: 8.0,

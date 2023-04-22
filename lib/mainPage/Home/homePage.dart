@@ -19,72 +19,71 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: SideBarMenu(),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        // leading: Padding(
-        //   padding: const EdgeInsets.only(left: 9.0 ,),
-        //   child: IconButton(
-        //     onPressed: () {},
-        //     icon: Image.asset(
-        //       'assets/leadingIcon.png',
-        //       width: 70,
-        //       height: 70,
-        //     ),
-        //   ),
-        // ),
-        actions: [
-          IconButton(
-           onPressed: () {
-          showSearch(context: context, delegate: search());
-        },
-            icon: Image.asset('assets/search.png'),
-          ),
-          Container(
-            width: 120,
-            height: 120,
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle, color: Color(0xffEBFDF2)),
-            child: Image(
-              width: 99,
-              height: 99,
-              image: AssetImage('assets/naptah1.png'),
-            ),
-          ),
-        ],
-      ),
-      body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(left: 8),
-              child: Text(
-                "Recommend",
-                style: GoogleFonts.roboto(
-                    textStyle: TextStyle(
-                        fontSize: 30,
-                        color: const Color(0xff184A2C),
-                        fontWeight: FontWeight.bold)),
-              ),
-            ),
-            PlantsCard(),
-            Padding(
-              padding: EdgeInsets.only(left: 8),
-              child: Text(
-                'Popular Plants',
-                style: GoogleFonts.roboto(
+
+      drawerScrimColor: Color(0xffB5B2B2),
+      // drawer: SideBarMenu(),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: Colors.white,
+      //   // leading: Padding(
+      //   //   padding: const EdgeInsets.only(left: 9.0 ,),
+      //   //   child: IconButton(
+      //   //     onPressed: () {
+      //   //       Navigator.push(
+      //   //         context,
+      //   //         MaterialPageRoute(
+      //   //             builder: (context) => const SideBarMenu()),
+      //   //       );
+      //   //     },
+      //   //     icon: Image.asset(
+      //   //       'assets/leading.png',
+      //   //       width: 70,
+      //   //       height: 70,
+      //   //     ),
+      //   //   ),
+      //   // ),
+      //   leading: ,
+      //   actions: [
+      //     IconButton(
+      //       onPressed: () {},
+      //       icon: Image.asset('assets/search.png'),
+      //     ),
+      //     Image(
+      //       image: AssetImage('assets/naptah1.png'),
+      //       width: 70,
+      //       height: 70,
+      //     ),
+      //   ],
+      // ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 8),
+            child: Text(
+              "Recommend",
+              style: GoogleFonts.roboto(
                   textStyle: TextStyle(
                       fontSize: 30,
                       color: const Color(0xff184A2C),
-                      fontWeight: FontWeight.bold),
-                ),
+                      fontWeight: FontWeight.bold)),
+            ),
+          ),
+          PlantsCard(),
+          Padding(
+            padding: EdgeInsets.only(left: 8),
+            child: Text(
+              'Popular Plants',
+              style: GoogleFonts.roboto(
+                textStyle: TextStyle(
+                    fontSize: 30,
+                    color: const Color(0xff184A2C),
+                    fontWeight: FontWeight.bold),
               ),
             ),
-            Expanded(child: PopularCard()),
-          ],
-        ),
+          ),
+          Expanded(child: PopularCard()),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

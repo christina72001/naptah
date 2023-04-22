@@ -38,8 +38,12 @@ class BottomBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Image.asset('assets/bottomIcon/chat_Icon.png',color: Color(0xff707070)),
-                  Image.asset('assets/bottomIcon/account_Icon.png',color: Color(0xff707070)),
+                  Image.asset('assets/bottomIcon/community.png',color: Color(0xff707070)),
+                  Stack(children: [
+                    Image.asset('assets/bottomIcon/chat.png',color: Color(0xff707070),scale: 0.8,),
+                    Align(alignment: Alignment.center,
+                        child: Image.asset('assets/bottomIcon/star.png',scale: 0.7,)),
+                  ],),
                 ],
               ),
             ),
