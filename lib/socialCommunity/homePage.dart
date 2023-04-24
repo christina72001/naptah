@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/bottom_bar.dart';
+import 'package:naptah/Home/bottom_bar.dart';
+// import 'package:naptah/mainPage/Home/bottom_bar.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePageCommunity extends StatefulWidget {
+  const HomePageCommunity({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePageCommunity> createState() => _HomePageCommunityState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageCommunityState extends State<HomePageCommunity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -340,17 +341,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color(0xff184A2C),
-        child: Image.asset(
-          'assets/bottomIcon/camera_Icon.png',
-          width: 30,
-          height: 30,
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomBar(),
+  
     );
   }
 }

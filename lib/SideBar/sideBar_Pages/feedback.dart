@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/Home/bottom_bar.dart';
 import 'package:quickalert/quickalert.dart';
 
 class SendFeedBack extends StatefulWidget {
@@ -26,7 +26,7 @@ class _SendFeedBackState extends State<SendFeedBack> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) => BottomBar()),
               );
             },
             icon: Icon(

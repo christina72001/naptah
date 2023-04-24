@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
-import 'package:naptah/sideBar_Pages/savedPlants/listPlant.dart';
-import 'package:naptah/sideBar_Pages/savedPlants/savedPlantsData.dart';
+import 'package:naptah/Home/homePage.dart';
+// import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/SideBar/sideBar_Pages/Saves/listPlant.dart';
+import 'package:naptah/SideBar/sideBar_Pages/Saves/savedPlantsData.dart';
 
 
 class SavedPlant extends StatelessWidget {

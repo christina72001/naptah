@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:naptah/mainPage/Home/bottom_bar.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/Home/bottom_bar.dart';
+import 'package:naptah/Home/homePage.dart';
 
 class coffeaPlants extends StatefulWidget {
   const coffeaPlants({super.key});
@@ -36,7 +36,7 @@ class _coffeaPlantsState extends State<coffeaPlants> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) => BottomBar()),
               );
             },
           ),
@@ -67,17 +67,6 @@ class _coffeaPlantsState extends State<coffeaPlants> {
               ],
             ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color(0xff184A2C),
-        child: Image.asset(
-          'assets/bottomIcon/camera_Icon.png',
-          width: 30,
-          height: 30,
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomBar(),
     );
   }
 }

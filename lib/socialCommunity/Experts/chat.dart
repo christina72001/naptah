@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:naptah/chatting/Account.dart';
-import 'package:naptah/chatting/chatBottom.dart';
-import 'package:naptah/chatting/chatSample.dart';
+import 'package:naptah/socialCommunity/Account.dart';
+import 'package:naptah/socialCommunity/chatBottom.dart';
+import 'package:naptah/socialCommunity/chatSample.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);

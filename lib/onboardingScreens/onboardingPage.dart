@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/Home/bottom_bar.dart';
+import 'package:naptah/Home/homePage.dart';
+// import 'package:naptah/mainPage/Home/homePage.dart';
 import 'package:naptah/loginScreens/SignupScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -33,10 +35,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
           children: [
             Image(
               image: AssetImage(image),
-              fit: BoxFit.cover,
+              width:MediaQuery.of(context).size.width*0.6,
+              height: MediaQuery.of(context).size.height*0.22,
+              // fit: BoxFit.cover,
             ),
-            const SizedBox(
-              height: 30,
+             SizedBox(
+              height: MediaQuery.of(context).size.height*0.02,
             ),
             Text(
               title,
@@ -44,8 +48,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 textStyle: TextStyle(color: Color(0xff184A2C), fontSize: 40),
               ),
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: MediaQuery.of(context).size.height*0.02,
             ),
             Text(
               description,
@@ -101,16 +105,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 390,
+                  height: MediaQuery.of(context).size.height*0.3,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 70),
+                  // padding: EdgeInsets.symmetric(vertical: 70),
                   child: isLastPage
-                      ? Center(
-                          child: Column(
-                            children: [
-                              Center(
-                                child: Row(
+                      ?  Column(
+                            children: [ SizedBox(
+                              height: MediaQuery.of(context).size.height*0.08,
+                            ),
+
+                              Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     SmoothPageIndicator(
@@ -129,11 +134,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                     ),
                                   ],
                                 ),
-                              ),
-                              SizedBox(height: 15,),
+                              
+                              SizedBox(height: MediaQuery.of(context).size.height*0.02),
                               Container(
-                                height: 58,
-                                width: 291,
+                                height: MediaQuery.of(context).size.height*0.077,
+                                width: MediaQuery.of(context).size.width*0.77,
                                 decoration: BoxDecoration(
                                   color: Color(0xff184A2C),
                                   borderRadius:
@@ -156,12 +161,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 15,
-                              ),
+                             SizedBox(
+                              height: MediaQuery.of(context).size.height*0.02,
+                            ),
                               Container(
-                                height: 58,
-                                width: 291,
+                               height: MediaQuery.of(context).size.height*0.077,
+                                width: MediaQuery.of(context).size.width*0.77,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius:
@@ -177,7 +182,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const HomePage()),
+                                               BottomBar()),
                                     );
                                   },
                                   child: Text(
@@ -192,16 +197,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               ),
 
                             ],
-                          ),
-                        )
+                          )
+                        
                       : Column(
+                       
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             SizedBox(
-                              height: 20,
+                              height: MediaQuery.of(context).size.height*0.1,
                             ),
-                            Center(
-                              child: Row(
+                            Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SmoothPageIndicator(
@@ -220,14 +225,14 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                   ),
                                 ],
                               ),
-                            ),
+                            
                             SizedBox(
-                              height: 40,
+                             height: MediaQuery.of(context).size.height*0.02,
                             ),
                             Center(
                               child: Container(
-                                height: 58,
-                                width: 291,
+                                height: MediaQuery.of(context).size.height*0.077,
+                                width: MediaQuery.of(context).size.width*0.77,
                                 decoration: BoxDecoration(
                                     color: Color(0xff184A2C),
                                     borderRadius:

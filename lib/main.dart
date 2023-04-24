@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:naptah/homePage/homePage.dart';
 import 'package:naptah/languages/langs.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/onboardingScreens/onboardingPage.dart';
+// import 'package:naptah/mainPage/Home/homePage.dart';
 import 'package:naptah/shared/blocObserver.dart';
-import 'package:naptah/sideBarMenu/sideBarMenu.dart';
-import 'package:naptah/sideBar_Pages/aboutUs.dart';
-import 'package:naptah/sideBar_Pages/feedback.dart';
-import 'package:naptah/sideBar_Pages/help.dart';
-import 'package:naptah/sideBar_Pages/savedPlants/savedplants.dart';
+import 'package:naptah/SideBar/sideBarMenu.dart';
+import 'package:naptah/SideBar/sideBar_Pages/aboutUs.dart';
+import 'package:naptah/SideBar/sideBar_Pages/feedback.dart';
+import 'package:naptah/SideBar/sideBar_Pages/help.dart';
+import 'package:naptah/SideBar/sideBar_Pages/Saves/savedplants.dart';
 
 
 void main() {
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false ,
       supportedLocales: Languages.all,
       title: 'Flutter Demo',
-      home:  Help(),
+      home:  OnboardingPage(),
     );
     //  
   }

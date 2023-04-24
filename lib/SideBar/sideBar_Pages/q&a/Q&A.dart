@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
-import 'package:naptah/sideBar_Pages/q&a/answer.dart';
+import 'package:naptah/Home/bottom_bar.dart';
+import 'package:naptah/SideBar/sideBar_Pages/q&a/answer.dart';
 
 class Questions extends StatelessWidget {
   const Questions({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class Questions extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) =>  BottomBar()),
               );
             },
             icon: Icon(Icons.arrow_back_ios,color: Color(0xff707070),size: 30,)

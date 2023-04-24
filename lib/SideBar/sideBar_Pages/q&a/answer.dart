@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:naptah/sideBar_Pages/q&a/Q&A.dart';
-
 class Answers extends StatelessWidget {
   const Answers({Key? key}) : super(key: key);
 

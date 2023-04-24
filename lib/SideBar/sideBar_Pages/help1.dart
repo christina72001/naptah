@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/sideBar_Pages/help.dart';
+import 'package:naptah/SideBar/sideBar_Pages/help.dart';
 
 class Help1 extends StatelessWidget {
   const Help1({Key? key}) : super(key: key);

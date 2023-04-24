@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
-import 'package:naptah/sideBar_Pages/help1.dart';
+import 'package:naptah/Home/bottom_bar.dart';
+import 'package:naptah/SideBar/sideBar_Pages/help1.dart';
 
 class Help extends StatelessWidget {
   const Help({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class Help extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) => BottomBar()),
               );
             },
             icon: Icon(

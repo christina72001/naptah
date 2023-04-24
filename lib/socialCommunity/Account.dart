@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/chatting/chat.dart';
+import 'package:naptah/socialCommunity/Experts/chatsNum.dart';
+import 'package:naptah/socialCommunity/Experts/experts.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -13,10 +14,8 @@ class AccountPage extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: IconButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ChatPage()),
-                );
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>Experts()));
+                
               },
               icon: Icon(Icons.arrow_back_ios,color: Color(0xff707070),size: 30,)
           ),),
@@ -105,7 +104,7 @@ class AccountPage extends StatelessWidget {
                         style:
                             TextStyle(color: Color(0xff184A2C), fontSize: 15),
                       ),
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>const ChatsPage()));},
                     ),
                   ),
                 ],

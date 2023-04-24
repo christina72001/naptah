@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/Home/homePage.dart';
-import 'package:naptah/loginScreens/SigninScreen.dart';
-import 'package:naptah/Experts/paymentDetails.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:naptah/socialCommunity/Experts/paymentDetails.dart';
 
 class premiumPage extends StatefulWidget {
   const premiumPage({super.key});

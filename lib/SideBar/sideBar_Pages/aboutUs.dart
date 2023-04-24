@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
-
-import 'package:naptah/sideBarMenu/sideBarMenu.dart';
-
+import 'package:naptah/Home/bottom_bar.dart';
 class AboutUs extends StatelessWidget {
   const AboutUs({Key? key}) : super(key: key);
 
@@ -18,7 +15,7 @@ class AboutUs extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) => BottomBar()),
               );
             },
             icon: Icon(
@@ -36,7 +33,7 @@ class AboutUs extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 18.0),
         child: Column(
           children: [
-            Image.asset("assets/sideBar-images/naptahPng.png"),
+            Image.asset("assets/naptahPng.png"),
             Text(
               "Naptah is a cutting-edge application for diagnosing plant diseases.",
               style: GoogleFonts.merriweatherSans(

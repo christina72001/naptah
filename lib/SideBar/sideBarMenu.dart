@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/sideBarMenu/side_bar_items.dart';
-import 'package:naptah/sideBar_Pages/aboutUs.dart';
-import 'package:naptah/sideBar_Pages/feedback.dart';
-import 'package:naptah/sideBar_Pages/help.dart';
-import 'package:naptah/sideBar_Pages/people.dart';
-import 'package:flutter_switch/flutter_switch.dart';
-import 'package:naptah/sideBar_Pages/q&a/Q&A.dart';
+import 'package:naptah/SideBar/sideBar_Pages/Profile.dart';
+import 'package:naptah/SideBar/side_bar_items.dart';
+import 'package:naptah/SideBar/sideBar_Pages/aboutUs.dart';
+import 'package:naptah/SideBar/sideBar_Pages/feedback.dart';
+import 'package:naptah/SideBar/sideBar_Pages/help.dart';
+import 'package:naptah/SideBar/sideBar_Pages/Language.dart';
+import 'package:naptah/SideBar/sideBar_Pages/q&a/Q&A.dart';
 
 
 class SideBarMenu extends StatefulWidget {
@@ -131,7 +130,7 @@ class _SideBarMenuState extends State<SideBarMenu> {
     switch (index) {
       case 0:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const People()));
+            context, MaterialPageRoute(builder: (context) => const Language()));
         break;
       case 1:
         Navigator.push(
@@ -153,27 +152,30 @@ class _SideBarMenuState extends State<SideBarMenu> {
   }
 
   Widget headerWidget() {
-    return Row(
-      children: [
-        GestureDetector(
-          onTap: () {},
-          child: const CircleAvatar(
-            radius: 30,
-            backgroundColor: Colors.green,
-          ),
-        ),
-        const SizedBox(
-          width: 20,
-        ),
-        Column(
-          children: [
-            Text(
-              "Christina Maher",
-              style: TextStyle(fontSize: 20, color: Colors.black),
+    return InkWell(
+      onTap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=>const Profile()));},
+      child: Row(
+        children: [
+          GestureDetector(
+            onTap: () {},
+            child: const CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.green,
             ),
-          ],
-        ),
-      ],
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          Column(
+            children: [
+              Text(
+                "Christina Maher",
+                style: TextStyle(fontSize: 20, color: Colors.black),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

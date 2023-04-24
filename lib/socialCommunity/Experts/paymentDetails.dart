@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/Home/homePage.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:naptah/socialCommunity/Experts/experts.dart';
 
 class paymentDetails extends StatefulWidget {
   @override
@@ -107,8 +106,11 @@ class _paymentDetailsState extends State<paymentDetails> {
                       borderRadius: BorderRadius.circular(6)),
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.of(context).pop();
-                    },
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Experts()),
+                );
+              },
                     child: const Text(
                       'Confirm Payment',
                       style: TextStyle(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:naptah/Home/homePage.dart';
-import 'package:naptah/Experts/premiumPage.dart';
+import 'package:naptah/socialCommunity/Experts/premiumPage.dart';
 import 'package:naptah/My_Plant/schedule.dart';
-import 'package:naptah/chatting/chat.dart';
-
-
+import 'package:naptah/socialCommunity/Experts/chat.dart';
+import 'package:naptah/socialCommunity/Experts/chatsNum.dart';
+import 'package:naptah/socialCommunity/homePage.dart';
 
 class BottomBar extends StatefulWidget {
   @override
@@ -14,24 +14,25 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   int _currentIndex = 0;
-  List<Widget> tabs = [HomePage(), schedule(), ChatPage(), premiumPage()];
+  List<Widget> tabs = [
+    HomePage(),
+    schedule(),
+    HomePageCommunity(),
+    premiumPage()
+  ];
 
-  
-   final picker = ImagePicker();
+  final picker = ImagePicker();
 
   Future getImage() async {
     final pickedFile = await picker.getImage(source: ImageSource.camera);
-     setState(() {
+    setState(() {
       if (pickedFile != null) {
         // _image = File(pickedFile.path);
       } else {
         print('No image selected.');
       }
     });
-
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +102,6 @@ class _BottomBarState extends State<BottomBar> {
                   ],
                 ),
                 label: '',
-                
               ),
             ],
           ),
