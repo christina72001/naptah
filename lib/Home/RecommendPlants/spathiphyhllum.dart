@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:naptah/mainPage/Home/bottom_bar.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
+import 'package:naptah/Home/homePage.dart';
+// import 'package:naptah/mainPage/Home/bottom_bar.dart';
+// import 'package:naptah/mainPage/Home/homePage.dart';
 
 class spathiphyhllum extends StatefulWidget {
   const spathiphyhllum({super.key});

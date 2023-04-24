@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:naptah/mainPage/Home/bottom_bar.dart';
-import 'package:naptah/mainPage/Home/homePage.dart';
-import 'package:naptah/mainPage/popularPlants/lemon.dart';
+import 'package:naptah/Home/bottom_bar.dart';
+import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/Home/popularPlants/lemon.dart';
 
 class vegetables extends StatefulWidget {
   const vegetables({super.key});
@@ -21,13 +21,13 @@ class _vegetablesState extends State<vegetables> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         //
-        title:  Padding(
+        title: Padding(
           padding: const EdgeInsets.only(right: 150),
           child: Text('Vegetables',
-                style:
-                    TextStyle(fontSize: 26.sp, color: const Color(0xff184A2C))),
+              style:
+                  TextStyle(fontSize: 26.sp, color: const Color(0xff184A2C))),
         ),
-          
+
         leading: Container(
           width: 4,
           height: 4,
@@ -39,7 +39,7 @@ class _vegetablesState extends State<vegetables> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) => BottomBar()),
               );
             },
           ),
@@ -48,35 +48,28 @@ class _vegetablesState extends State<vegetables> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.count(
-            crossAxisCount: 2,
-            children: List.generate(10, (index) {
-              return Container(
-                margin: EdgeInsets.all(4),
-                child: GestureDetector(
+          crossAxisCount: 2,
+          children: List.generate(10, (index) {
+            return Container(
+              margin: EdgeInsets.all(4),
+              child: GestureDetector(
                   onTap: () {
-                  if (index == 1) {
-                    Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const lemon()),
-                );
-                  }
-                },
-                  child: Image.asset('assets/vegetables/$index.png',width: 160,height: 196,)),
-              );
-            }),
-          ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Color(0xff184A2C),
-        child: Image.asset(
-          'assets/bottomIcon/camera_Icon.png',
-          width: 30,
-          height: 30,
+                    if (index == 1) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const lemon()),
+                      );
+                    }
+                  },
+                  child: Image.asset(
+                    'assets/vegetables/$index.png',
+                    width: 160,
+                    height: 196,
+                  )),
+            );
+          }),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomBar(),
     );
   }
 }
