@@ -28,13 +28,6 @@ class _BottomBarState extends State<BottomBar> {
   Future getImage() async {
     final pickedFile = await picker.getImage(source: ImageSource.camera);
     return File(pickedFile!.path);
-    // setState(() {
-    //   if (pickedFile != null) {
-    //     // _image = File(pickedFile.path);
-    //   } else {
-    //     print('No image selected.');
-    //   }
-    // });
   }
 
   @override
@@ -42,13 +35,14 @@ class _BottomBarState extends State<BottomBar> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-           File? image = await getImage();
-            if (image != null) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => resultScreen(image: image)),
-              );
-            }
+          File? image = await getImage();
+          if (image != null) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => resultScreen(image: image)),
+            );
+          }
         },
         backgroundColor: Color(0xff184A2C),
         child: Image.asset(

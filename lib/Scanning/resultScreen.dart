@@ -1,11 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/Home/bottom_bar.dart';
 import 'package:readmore/readmore.dart';
 import 'RecommendationSreen.dart';
 
 class resultScreen extends StatefulWidget {
-
   final File image;
 
   resultScreen({required this.image});
@@ -30,14 +29,14 @@ String txt2B =
 String theText = " \n\n\n\n\n \n\n";
 
 class _resultScreenState extends State<resultScreen> {
-
-    late File _image;
+  late File _image;
 
   @override
   void initState() {
     super.initState();
     _image = widget.image;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +51,7 @@ class _resultScreenState extends State<resultScreen> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const HomePage()),
+              MaterialPageRoute(builder: (context) => BottomBar()),
             );
           },
         ),
@@ -77,9 +76,11 @@ class _resultScreenState extends State<resultScreen> {
                     alignment: Alignment.center,
                     height: MediaQuery.of(context).size.height * 0.24,
                     child: ClipRRect(
-                        borderRadius: BorderRadius.circular(25),
-                        child: Container(
-                            child: Image.file(_image),)),
+                      borderRadius: BorderRadius.circular(25),
+                      child: Container(
+                        child: Image.file(_image),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -98,12 +99,7 @@ class _resultScreenState extends State<resultScreen> {
                       InkWell(
                         onTap: () {
                           clicked = !clicked;
-                          // if (clicked) {
-                          //   theText =
-                          //       "Alternaria (early blight) of potatoes: \n\nAlternaria is a fungal disease caused by Alternaria solani or Alternaria Alternata.  A disease that causes premature aging of leaves.  It can cause significant payback losses in the event of early attacks.  The most common variety is Alternaria Solani.\nThe soil should consist of organic matter, usually in the form of compost, with adequate amounts of fertilizer and moisture.When growing tomatoes, you need to start early because most of them take a while to ripen.\n\nSymptoms:  \n\nOn the leaves: the appearance of small necrotic spots of varying size and shape, limited by veins and central rings that characterize the disease. The severity of the damage leads to the dropping of the leaves of the plants, which affects the development of the tubers. On the tubers: the appearance of dark brown spots with central rings.  The spots are necrotic, rather deep, which leads to a bad tuber.";
-                          // } else {
-                          //   theText = 'This is the original long text.';
-                          // }
+
                           setState(() {});
                         },
                         child: Chip(
@@ -120,22 +116,19 @@ class _resultScreenState extends State<resultScreen> {
                       InkWell(
                           onTap: () {
                             clicked = !clicked;
-                            // if (clicked) {
-                            //   theText =
-                            //       "Alternaria (early blight) of potatoes: \n\nAlternaria is a fungal disease caused by Alternaria solani or Alternaria Alternata.  A disease that causes premature aging of leaves.  It can cause significant payback losses in the event of early attacks.  The most common variety is Alternaria Solani.\nThe soil should consist of organic matter, usually in the form of compost, with adequate amounts of fertilizer and moisture.When growing tomatoes, you need to start early because most of them take a while to ripen.\n\nSymptoms:  \n\nOn the leaves: the appearance of small necrotic spots of varying size and shape, limited by veins and central rings that characterize the disease. The severity of the damage leads to the dropping of the leaves of the plants, which affects the development of the tubers. On the tubers: the appearance of dark brown spots with central rings.  The spots are necrotic, rather deep, which leads to a bad tuber.";
-                            // } else {
-                            //   theText = 'This is the original long text.';
-                            // }
+
                             setState(() {});
                           },
                           child: Chip(
-                              backgroundColor:
-                                  clicked ? Color(0xffD9D8D8) : Color(0xff184A2C),
+                              backgroundColor: clicked
+                                  ? Color(0xffD9D8D8)
+                                  : Color(0xff184A2C),
                               label: Text(
                                 "        Health Care         ",
                                 style: TextStyle(
-                                  color:
-                                      clicked ? Color(0xff184A2C) : Colors.white,
+                                  color: clicked
+                                      ? Color(0xff184A2C)
+                                      : Colors.white,
                                 ),
                               ))),
                     ],
@@ -145,18 +138,23 @@ class _resultScreenState extends State<resultScreen> {
               clicked
                   ? Text(topTitleA, style: TextStyle(fontSize: 20))
                   : Text(topTitleB, style: TextStyle(fontSize: 20)),
-              clicked ? Text(txt1A, style: TextStyle(fontSize: 18,color: Color(0xff707070))) : Text(txt1B, style: TextStyle(fontSize: 18,color: Color(0xff707070))),
+              clicked
+                  ? Text(txt1A,
+                      style: TextStyle(fontSize: 18, color: Color(0xff707070)))
+                  : Text(txt1B,
+                      style: TextStyle(fontSize: 18, color: Color(0xff707070))),
               clicked
                   ? Text(secondTitleA, style: TextStyle(fontSize: 20))
                   : Text(secondTitleB, style: TextStyle(fontSize: 20)),
               clicked
-                  ? Text(txt2A, style: TextStyle(fontSize: 18,color: Color(0xff707070)))
+                  ? Text(txt2A,
+                      style: TextStyle(fontSize: 18, color: Color(0xff707070)))
                   : Padding(
                       padding: const EdgeInsets.all(12),
                       child: Container(
                         child: ReadMoreText(
                           txt2B,
-                          style: TextStyle(fontSize: 18,color: Colors.blue),
+                          style: TextStyle(fontSize: 18, color: Colors.blue),
                           trimLines: 1,
                           trimMode: TrimMode.Line,
                           trimCollapsedText: 'Read more',
@@ -172,12 +170,12 @@ class _resultScreenState extends State<resultScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 22),
+              SizedBox(height: 22),
               clicked
                   ? Text("")
                   : Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.height*0.9,
+                      child: Container(
+                        // width: MediaQuery.of(context).size.height*0.9,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(22),
@@ -190,31 +188,36 @@ class _resultScreenState extends State<resultScreen> {
                               padding: const EdgeInsets.all(6.0),
                               child: Image.asset("assets/marj.png"),
                             ),
-                            Text("Recommended Treatment",style: TextStyle(fontSize: 16),),
-                            
+                            Text(
+                              "Recommended Treatment",
+                              style: TextStyle(fontSize: 16),
+                            ),
                             Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: Container(
-                               
                                 decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color(0xff184A2C)
-                                ),
-
+                                    shape: BoxShape.circle,
+                                    color: Color(0xff184A2C)),
                                 child: IconButton(
-                                    onPressed: () {Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>  recommendationScreen())
-                      );},
-                                    icon: Icon(Icons.arrow_forward,color: Colors.white,size: 24,)),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  recommendationScreen()));
+                                    },
+                                    icon: Icon(
+                                      Icons.arrow_forward,
+                                      color: Colors.white,
+                                      size: 24,
+                                    )),
                               ),
                             )
                           ],
                         ),
                       ),
-                  ),
-                  SizedBox(height: 22)
+                    ),
+              SizedBox(height: 22)
             ],
           ),
         ),

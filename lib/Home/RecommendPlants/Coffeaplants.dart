@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:naptah/Home/bottom_bar.dart';
-import 'package:naptah/Home/homePage.dart';
+// import 'package:naptah/Home/homePage.dart';
 
-class coffeaPlants extends StatefulWidget {
+class coffeaPlants extends StatelessWidget {
   const coffeaPlants({super.key});
 
-  @override
-  State<coffeaPlants> createState() => _coffeaPlantsState();
-}
-
-class _coffeaPlantsState extends State<coffeaPlants> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
