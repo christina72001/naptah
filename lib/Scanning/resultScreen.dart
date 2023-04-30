@@ -1,10 +1,15 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:naptah/Home/homePage.dart';
 import 'package:readmore/readmore.dart';
-
 import 'RecommendationSreen.dart';
 
 class resultScreen extends StatefulWidget {
+
+  final File image;
+
+  resultScreen({required this.image});
+
   @override
   State<resultScreen> createState() => _resultScreenState();
 }
@@ -25,6 +30,14 @@ String txt2B =
 String theText = " \n\n\n\n\n \n\n";
 
 class _resultScreenState extends State<resultScreen> {
+
+    late File _image;
+
+  @override
+  void initState() {
+    super.initState();
+    _image = widget.image;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +79,7 @@ class _resultScreenState extends State<resultScreen> {
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(25),
                         child: Container(
-                            child: Image.asset("assets/potatoLeavesc.png"))),
+                            child: Image.file(_image),)),
                   ),
                 ),
               ),

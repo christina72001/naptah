@@ -1,13 +1,15 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/Scanning/resultScreen.dart';
 import 'package:naptah/socialCommunity/Experts/premiumPage.dart';
 import 'package:naptah/My_Plant/schedule.dart';
-import 'package:naptah/socialCommunity/Experts/chat.dart';
-import 'package:naptah/socialCommunity/Experts/chatsNum.dart';
 import 'package:naptah/socialCommunity/homePage.dart';
 
 class BottomBar extends StatefulWidget {
+  // const BottomBar({super.key});
+
   @override
   State<BottomBar> createState() => _BottomBarState();
 }
@@ -15,31 +17,38 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _currentIndex = 0;
   List<Widget> tabs = [
-    HomePage(),
-    schedule(),
-    HomePageCommunity(),
-    premiumPage()
+    const HomePage(),
+    const schedule(),
+    const HomePageCommunity(),
+    const premiumPage()
   ];
 
   final picker = ImagePicker();
 
   Future getImage() async {
     final pickedFile = await picker.getImage(source: ImageSource.camera);
-    setState(() {
-      if (pickedFile != null) {
-        // _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
-      }
-    });
+    return File(pickedFile!.path);
+    // setState(() {
+    //   if (pickedFile != null) {
+    //     // _image = File(pickedFile.path);
+    //   } else {
+    //     print('No image selected.');
+    //   }
+    // });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          getImage();
+        onPressed: () async {
+           File? image = await getImage();
+            if (image != null) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => resultScreen(image: image)),
+              );
+            }
         },
         backgroundColor: Color(0xff184A2C),
         child: Image.asset(
