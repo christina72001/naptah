@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       builder: DevicePreview.appBuilder,
       theme: ThemeData(
+
         primaryColor: Color(0xff184A2C)
       ),
       debugShowCheckedModeBanner: false ,
