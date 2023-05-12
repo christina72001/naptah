@@ -12,7 +12,7 @@ class PlantsCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(8),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.196,
+        height: MediaQuery.of(context).size.height * 0.199,
         child: ListView.separated(
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,

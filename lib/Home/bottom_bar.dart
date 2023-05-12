@@ -1,20 +1,21 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:naptah/Home/homePage.dart';
 import 'package:naptah/Scanning/resultScreen.dart';
 import 'package:naptah/socialCommunity/Experts/premiumPage.dart';
 import 'package:naptah/My_Plant/schedule.dart';
 import 'package:naptah/socialCommunity/homePage.dart';
+import 'package:image_picker/image_picker.dart';
 
 class BottomBar extends StatefulWidget {
-  // const BottomBar({super.key});
-
   @override
   State<BottomBar> createState() => _BottomBarState();
 }
 
 class _BottomBarState extends State<BottomBar> {
+  late File _image;
+  final picker = ImagePicker();
+
   int _currentIndex = 0;
   List<Widget> tabs = [
     const HomePage(),
@@ -23,24 +24,22 @@ class _BottomBarState extends State<BottomBar> {
     const premiumPage()
   ];
 
-  final picker = ImagePicker();
-
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
-    return File(pickedFile!.path);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+
         onPressed: () async {
-          File? image = await getImage();
-          if (image != null) {
+          final pickedFile = await picker.getImage(source: ImageSource.gallery);
+          if (pickedFile != null) {
+            setState(() {
+              _image = File(pickedFile.path);
+            });
+            
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => resultScreen(image: image)),
+                  builder: (context) => resultScreen(image: _image)),
             );
           }
         },

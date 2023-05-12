@@ -1,3 +1,5 @@
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class Plants {
   String? name;
   String? description;
@@ -7,7 +9,7 @@ class Plants {
 
 List<Plants> plantsCardsList = [
   Plants(
-      name: "Spathiphyllum",
+      name: "spathiphyllum",
       description:
       'is a genus of about 47 species of monocotyledonous flowering plants in the family Araceae',
       image: 'assets/plants_card/Spathiphyllum.png'),
