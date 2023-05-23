@@ -3,6 +3,8 @@ import 'package:naptah/loginScreens/SignupScreen.dart';
 import 'package:naptah/loginScreens/ForgetPassword.dart';
 import 'package:naptah/Home/homePage.dart';
 
+import '../Home/bottom_bar.dart';
+
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
 
@@ -151,7 +153,7 @@ class _SignInState extends State<SignIn> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomePage()),
+                              builder: (context) => BottomBar()),
                         );
                       },
                       child: const Text(
