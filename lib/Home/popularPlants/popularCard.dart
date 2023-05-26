@@ -43,7 +43,7 @@ class PopularCard extends StatelessWidget {
       child: Container(
         height: 90,
         width: double.infinity,
-        padding: EdgeInsetsDirectional.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 15),
         decoration: BoxDecoration(
           color: const Color(0xffEBFDF2),
           borderRadius: BorderRadiusDirectional.all(

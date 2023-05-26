@@ -18,16 +18,16 @@ class _HomePageState extends State<HomePage> {
   // File image;
   final picker = ImagePicker();
 
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
-    setState(() {
-      if (pickedFile != null) {
-        // _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
+  // Future getImage() async {
+  //   final pickedFile = await picker.getImage(source: ImageSource.camera);
+  //   setState(() {
+  //     if (pickedFile != null) {
+  //       _image = File(pickedFile.path);
+  //     } else {
+  //       print('No image selected.');
+  //     }
+  //   });
+  // }
 
   var keyy = GlobalKey<ScaffoldState>();
 
@@ -35,9 +35,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: keyy,
-
       backgroundColor: Colors.white,
-
       drawer: SideBarMenu(),
       appBar: AppBar(
         elevation: 0,

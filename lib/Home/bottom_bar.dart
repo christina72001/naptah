@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/Scanning/scannScreen.dart';
 import 'package:naptah/socialCommunity/Experts/premiumPage.dart';
 import 'package:naptah/My_Plant/schedule.dart';
 import 'package:naptah/socialCommunity/Experts/chat.dart';
@@ -20,26 +21,28 @@ class _BottomBarState extends State<BottomBar> {
     HomePageCommunity(),
     premiumPage()
   ];
+  //
+  // final picker = ImagePicker();
 
-  final picker = ImagePicker();
-
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
-    setState(() {
-      if (pickedFile != null) {
-        // _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
+  // Future getImage() async {
+  //   final pickedFile = await picker.getImage(source: ImageSource.camera);
+  //   setState(() {
+  //     if (pickedFile != null) {
+  //       // _image = File(pickedFile.path);
+  //     } else {
+  //       print('No image selected.');
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          getImage();
+        onPressed: () => {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ScanSceen())),
+          //   getImage();
         },
         backgroundColor: Color(0xff184A2C),
         child: Image.asset(
@@ -50,18 +53,18 @@ class _BottomBarState extends State<BottomBar> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        notchMargin: 8,
-        elevation: 60.0,
+        notchMargin: 10,
+        // elevation: 50.0,
         clipBehavior: Clip.antiAlias,
         shape: const CircularNotchedRectangle(),
         child: Container(
           height: 70.0,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25.0),
-              topRight: Radius.circular(25.0),
+              topLeft: Radius.circular(30.0),
+              topRight: Radius.circular(30.0),
             ),
-            color: Colors.white,
+            // color: Colors.blueAccent,
           ),
           child: BottomNavigationBar(
             currentIndex: _currentIndex,
@@ -76,15 +79,15 @@ class _BottomBarState extends State<BottomBar> {
             items: [
               const BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/home_Icon.png")),
-                label: '',
+                label: 'Home',
               ),
               const BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/icons8-plant-100.png")),
-                label: '',
+                label: 'Schedule',
               ),
               const BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/group-users.png")),
-                label: '',
+                label: 'Community',
               ),
               BottomNavigationBarItem(
                 icon: Stack(
@@ -101,7 +104,7 @@ class _BottomBarState extends State<BottomBar> {
                     ),
                   ],
                 ),
-                label: '',
+                label: 'Experts',
               ),
             ],
           ),

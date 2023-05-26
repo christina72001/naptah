@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naptah/Home/bottom_bar.dart';
-// import 'package:naptah/mainPage/Home/bottom_bar.dart';
+// import 'package:naptah/Home/bottom_bar.dart';
+// // import 'package:naptah/mainPage/Home/bottom_bar.dart';
 
 class HomePageCommunity extends StatefulWidget {
   const HomePageCommunity({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _HomePageCommunityState extends State<HomePageCommunity> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: const EdgeInsets.all(8.0),
           child: Text(
             'Social Community',
             style: GoogleFonts.merriweatherSans(
