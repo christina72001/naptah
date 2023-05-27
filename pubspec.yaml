@@ -32,6 +32,9 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^4.0.6
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -56,9 +59,9 @@ dependencies:
   scan: ^1.6.0
   custom_clippers: ^2.0.0
   flutter_switch: ^0.3.2
-  qr_flutter: ^4.0.0
-  camera: ^0.10.3+2
+  quickalert: ^1.0.1
   readmore: ^2.2.0
+
   # path: ^1.8.2
 
 
@@ -83,6 +86,7 @@ flutter_native_splash:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -96,6 +100,7 @@ flutter:
     - assets/plants_card/
     - assets/popular_card/
     - assets/vegetables/
+    - assets/saved_images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:naptah/Home/homePage.dart';
+// import 'package:naptah/mainPage/Home/bottom_bar.dart';
+// import 'package:naptah/mainPage/Home/homePage.dart';
 
 class spathiphyhllum extends StatefulWidget {
   const spathiphyhllum({super.key});
@@ -13,35 +15,36 @@ class _spathiphyhllumState extends State<spathiphyhllum> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          //
-          title: Padding(
-            padding: const EdgeInsets.only(right: 100),
-            child: Text('spathiphyhllum',
-                style:
-                    TextStyle(fontSize: 26.sp, color: const Color(0xff184A2C))),
-          ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        //
+        title: Padding(
+          padding: const EdgeInsets.only(right: 100),
+          child: Text('spathiphyhllum',
+              style:
+                  TextStyle(fontSize: 26.sp, color: const Color(0xff184A2C))),
+        ),
 
-          leading: Container(
-            width: 4,
-            height: 4,
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle, color: Color(0xffF9F9F9)),
-            child: IconButton(
-              icon: Icon(Icons.arrow_back_ios),
-              color: Color(0xff707070),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
-                );
-              },
-            ),
+        leading: Container(
+          width: 4,
+          height: 4,
+          decoration: const BoxDecoration(
+              shape: BoxShape.circle, color: Color(0xffF9F9F9)),
+          child: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            color: Color(0xff707070),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomePage()),
+              );
+            },
           ),
         ),
-        body: Padding(
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
@@ -65,6 +68,8 @@ class _spathiphyhllumState extends State<spathiphyhllum> {
                           child: Image.asset('assets/Spathiphyllum.png')))),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

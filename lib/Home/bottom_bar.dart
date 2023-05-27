@@ -1,90 +1,113 @@
 import 'package:flutter/material.dart';
-import 'package:naptah/Home/Profile.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:naptah/Home/homePage.dart';
-import 'package:naptah/Home/premium/premiumPage.dart';
-import 'package:naptah/test.dart';
+import 'package:naptah/socialCommunity/Experts/premiumPage.dart';
+import 'package:naptah/My_Plant/schedule.dart';
+import 'package:naptah/socialCommunity/Experts/chat.dart';
+import 'package:naptah/socialCommunity/Experts/chatsNum.dart';
+import 'package:naptah/socialCommunity/homePage.dart';
 
-import '../Scanning/resultScreen.dart';
+class BottomBar extends StatefulWidget {
+  @override
+  State<BottomBar> createState() => _BottomBarState();
+}
 
-class BottomBar extends StatelessWidget {
-  const BottomBar({Key? key}) : super(key: key);
+class _BottomBarState extends State<BottomBar> {
+  int _currentIndex = 0;
+  List<Widget> tabs = [
+    HomePage(),
+    schedule(),
+    HomePageCommunity(),
+    premiumPage()
+  ];
+
+  final picker = ImagePicker();
+
+  Future getImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+    setState(() {
+      if (pickedFile != null) {
+        // _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return BottomAppBar(
-      shape: const CircularNotchedRectangle(),
-      notchMargin: 18.0,
-      color: Colors.transparent,
-      elevation: 40.0,
-      clipBehavior: Clip.antiAlias,
-      child: Container(
-        height: 70.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(25.0),
-            topRight: Radius.circular(25.0),
-          ),
-          color: Colors.white,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width / 2 - 30.0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  GestureDetector(
-                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>  resultScreen())
-                      );
-                    },
-                    child: Image.asset('assets/bottomIcon/home_Icon.png',
-                        color: const Color(0xff707070)),
-                  ),
-                  Image.asset('assets/bottomIcon/plant_Icon.png',
-                      color: const Color(0xff707070)),
-                ],
-              ),
-            ),
-            Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width / 2 - 30.0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const premiumPage())
-                      );
-                    },
-                    child: Image.asset('assets/bottomIcon/chat_Icon.png',
-                        color: const Color(0xff707070)),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Profile())
-                      );
-                    },
-                    child: Image.asset('assets/bottomIcon/account_Icon.png',
-                        color: const Color(0xff707070)),
-                  ),
-                ],
-              ),
-            ),
-          ],
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          getImage();
+        },
+        backgroundColor: Color(0xff184A2C),
+        child: Image.asset(
+          'assets/bottomIcon/camera_Icon.png',
+          width: 40,
+          height: 40,
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 8,
+        elevation: 60.0,
+        clipBehavior: Clip.antiAlias,
+        shape: const CircularNotchedRectangle(),
+        child: Container(
+          height: 70.0,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25.0),
+              topRight: Radius.circular(25.0),
+            ),
+            color: Colors.white,
+          ),
+          child: BottomNavigationBar(
+            currentIndex: _currentIndex,
+            selectedItemColor: Color(0xff184A2C),
+            unselectedItemColor: Color(0xff707070),
+            iconSize: 40,
+            type: BottomNavigationBarType.fixed,
+            onTap: (index) {
+              _currentIndex = index;
+              setState(() {});
+            },
+            items: [
+              const BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage("assets/home_Icon.png")),
+                label: '',
+              ),
+              const BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage("assets/icons8-plant-100.png")),
+                label: '',
+              ),
+              const BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage("assets/group-users.png")),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Stack(
+                  children: const [
+                    ImageIcon(AssetImage("assets/user (3).png")),
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Icon(
+                        Icons.star,
+                        color: Color(0xffFFC107),
+                        size: 26,
+                      ),
+                    ),
+                  ],
+                ),
+                label: '',
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: tabs[_currentIndex],
     );
   }
 }

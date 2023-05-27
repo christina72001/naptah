@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:naptah/Home/bottom_bar.dart';
 import 'package:naptah/Home/homePage.dart';
+// import 'package:naptah/mainPage/Home/homePage.dart';
 import 'package:naptah/loginScreens/SignupScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -27,16 +29,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
     required String description,
   }) =>
       Padding(
-        padding: const EdgeInsets.all(50.0),
+        padding: const EdgeInsets.all(35.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Image(
               image: AssetImage(image),
-              fit: BoxFit.cover,
+              width:MediaQuery.of(context).size.width*0.6,
+              height: MediaQuery.of(context).size.height*0.22,
+              // fit: BoxFit.cover,
             ),
-            const SizedBox(
-              height: 30,
+             SizedBox(
+              height: MediaQuery.of(context).size.height*0.02,
             ),
             Text(
               title,
@@ -44,15 +48,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 textStyle: TextStyle(color: Color(0xff184A2C), fontSize: 40),
               ),
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: MediaQuery.of(context).size.height*0.02,
             ),
             Text(
               description,
               style: GoogleFonts.roboto(
                 textStyle: TextStyle(
                   color: Color(0xff060706),
-                  fontSize: 21,
+                  fontSize: 20,
                 ),
               ),
               textAlign: TextAlign.center,
@@ -72,7 +76,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             PageView(
               controller: controller,
               onPageChanged: (index) {
-                setState(() => isLastPage = index == 2);
+                setState(() => isLastPage = index == 3);
               },
               children: [
                 Pages(
@@ -90,60 +94,56 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     title: 'Care',
                     description:
                         'We provide a plan and appropriate methods for plant care and better production.'),
+                Pages(
+                    image: "assets/email.png",
+                    title: 'Speak with expert',
+                    description:
+                        "Communication with experts in the field of plants and diseases for more accurate information"),
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 390,
+                  height: MediaQuery.of(context).size.height*0.3,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 70),
+                  // padding: EdgeInsets.symmetric(vertical: 70),
                   child: isLastPage
-                      ? Center(
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 58,
-                                width: 291,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius:
-                                        BorderRadiusDirectional.circular(22),
-                                        border: Border.all(
-                                      color: Color(0xff184A2C),
-                                      width: 2.5,
-                                    ),),
-                                child: TextButton(
-                                  onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
-          );
-        },
-                                  child: Text(
-                                    "Get Started",
-                                    style: GoogleFonts.roboto(
-                                      textStyle: TextStyle(
-                                          color: Color(0xff184A2C),
-                                          fontSize: 25),
+                      ?  Column(
+                            children: [ SizedBox(
+                              height: MediaQuery.of(context).size.height*0.08,
+                            ),
+
+                              Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SmoothPageIndicator(
+                                      controller: controller,
+                                      count: 4,
+                                      axisDirection: Axis.horizontal,
+                                      effect: ExpandingDotsEffect(
+                                        spacing: 8.0,
+                                        dotWidth: 10.0,
+                                        dotHeight: 10,
+                                        paintStyle: PaintingStyle.fill,
+                                        strokeWidth: 2,
+                                        dotColor: Color(0xffCFCDCD),
+                                        activeDotColor: Color(0xff184A2C),
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
+                              
+                              SizedBox(height: MediaQuery.of(context).size.height*0.02),
                               Container(
-                                height: 58,
-                                width: 291,
+                                height: MediaQuery.of(context).size.height*0.077,
+                                width: MediaQuery.of(context).size.width*0.77,
                                 decoration: BoxDecoration(
-                                    
-                                    color: Color(0xff184A2C),
-                                    borderRadius:
-                                        BorderRadiusDirectional.circular(22),
-                                    ),
+                                  color: Color(0xff184A2C),
+                                  borderRadius:
+                                  BorderRadiusDirectional.circular(22),
+                                ),
                                 child: TextButton(
                                   onPressed: () {
                                     Navigator.push(
@@ -157,27 +157,61 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                     style: GoogleFonts.roboto(
                                       textStyle: TextStyle(
                                           color: Colors.white, fontSize: 25),
-                                    
                                     ),
                                   ),
                                 ),
                               ),
+                             SizedBox(
+                              height: MediaQuery.of(context).size.height*0.02,
+                            ),
+                              Container(
+                               height: MediaQuery.of(context).size.height*0.077,
+                                width: MediaQuery.of(context).size.width*0.77,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(22),
+                                  border: Border.all(
+                                    color: Color(0xff184A2C),
+                                    width: 2.5,
+                                  ),
+                                ),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                               BottomBar()),
+                                    );
+                                  },
+                                  child: Text(
+                                    "Get Started",
+                                    style: GoogleFonts.roboto(
+                                      textStyle: TextStyle(
+                                          color: Color(0xff184A2C),
+                                          fontSize: 25),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
                             ],
-                          ),
-                        )
+                          )
+                        
                       : Column(
+                       
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             SizedBox(
-                              height: 20,
+                              height: MediaQuery.of(context).size.height*0.1,
                             ),
-                            Center(
-                              child: Row(
+                            Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SmoothPageIndicator(
                                     controller: controller,
-                                    count: 3,
+                                    count: 4,
                                     axisDirection: Axis.horizontal,
                                     effect: ExpandingDotsEffect(
                                       spacing: 8.0,
@@ -191,14 +225,14 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                   ),
                                 ],
                               ),
-                            ),
+                            
                             SizedBox(
-                              height: 40,
+                             height: MediaQuery.of(context).size.height*0.02,
                             ),
                             Center(
                               child: Container(
-                                height: 58,
-                                width: 291,
+                                height: MediaQuery.of(context).size.height*0.077,
+                                width: MediaQuery.of(context).size.width*0.77,
                                 decoration: BoxDecoration(
                                     color: Color(0xff184A2C),
                                     borderRadius:
