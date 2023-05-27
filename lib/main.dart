@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // supportedLocales: Languages.all,
       title: 'Flutter Demo',
+      
       home: OnboardingPage(),
     );
     //

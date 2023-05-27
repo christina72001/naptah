@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:naptah/Scanning/resultScreen.dart';
+import 'package:naptah/Scanning/disease&treatment.dart';
 
 class recommendationScreen extends StatelessWidget {
   const recommendationScreen({super.key});
