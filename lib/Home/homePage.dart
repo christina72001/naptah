@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:naptah/Home/RecommendPlants/plantsCard.dart';
 import 'package:naptah/Home/popularPlants/popularCard.dart';
 import 'package:naptah/SideBar/sideBarMenu.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:image_picker/image_picker.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,18 +17,18 @@ class _HomePageState extends State<HomePage> {
   // int _currentIndex = 0;
   // List<Widget> tabs = [HomePage(), schedule(), ChatPage(), we1()];
   // File image;
-  final picker = ImagePicker();
+  // final picker = ImagePicker();
 
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
-    setState(() {
-      if (pickedFile != null) {
-        // _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
+  // Future getImage() async {
+  //   final pickedFile = await picker.getImage(source: ImageSource.camera);
+  //   setState(() {
+  //     if (pickedFile != null) {
+  //       // _image = File(pickedFile.path);
+  //     } else {
+  //       print('No image selected.');
+  //     }
+  //   });
+  // }
 
   var keyy = GlobalKey<ScaffoldState>();
 
@@ -85,7 +86,8 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: EdgeInsets.only(left: 8),
               child: Text(
-                "Recommend",
+               AppLocalizations.of(context)!.recommended,
+
                 style: GoogleFonts.roboto(
                     textStyle: TextStyle(
                         fontSize: 26,
@@ -97,7 +99,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: EdgeInsets.only(left: 8),
               child: Text(
-                'Popular Plants',
+                AppLocalizations.of(context)!.popularPlants,
                 style: GoogleFonts.roboto(
                   textStyle: TextStyle(
                       fontSize: 26,

@@ -16,7 +16,7 @@ class PopularCard extends StatelessWidget {
           itemCount: popularCardList.length,
           separatorBuilder: (context, index) {
             return SizedBox(
-              height: 8,
+             height: MediaQuery.of(context).size.height*0.02,
             );
           },
           itemBuilder: (context, index) => _popularCard(
@@ -24,8 +24,10 @@ class PopularCard extends StatelessWidget {
             popularCardList[index],
             index,
           ),
+          
         ),
       ),
+      
     );
   }
 
@@ -41,7 +43,7 @@ class PopularCard extends StatelessWidget {
         }
       },
       child: Container(
-        height: 90,
+        height: MediaQuery.of(context).size.height*0.12,
         width: double.infinity,
         padding: EdgeInsetsDirectional.symmetric(horizontal: 15),
         decoration: BoxDecoration(
@@ -64,11 +66,12 @@ class PopularCard extends StatelessWidget {
               image: AssetImage(
                 '${popularCard.image.toString()}',
               ),
-              height: 110,
-              width: 110,
+              height: MediaQuery.of(context).size.height*0.12,
+              width: MediaQuery.of(context).size.width * 0.4,
             ),
           ],
         ),
+        
       ),
     );
   }

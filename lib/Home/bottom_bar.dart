@@ -1,11 +1,16 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/My_Plant/myplants.dart';
+import 'package:naptah/Scanning/disease&treatment.dart';
+import 'package:naptah/Scanning/scan_result.dart';
 import 'package:naptah/socialCommunity/Experts/premiumPage.dart';
 import 'package:naptah/My_Plant/schedule.dart';
-import 'package:naptah/socialCommunity/Experts/chat.dart';
-import 'package:naptah/socialCommunity/Experts/chatsNum.dart';
 import 'package:naptah/socialCommunity/homePage.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:http/http.dart' as http;
+
+import '../Scanning/scanServices.dart';
 
 class BottomBar extends StatefulWidget {
   @override
@@ -13,24 +18,74 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
+  File? _imageFile;
+  String _responseText = '';
+  bool _scanning = false;
+
   int _currentIndex = 0;
   List<Widget> tabs = [
-    HomePage(),
-    schedule(),
-    HomePageCommunity(),
-    premiumPage()
+    const HomePage(),
+     my_plants(),
+    const HomePageCommunity(),
+    const premiumPage()
   ];
-
-  final picker = ImagePicker();
-
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
-    setState(() {
-      if (pickedFile != null) {
-        // _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
+  Future<void> _selectImage() async {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          child: Wrap(
+            children: [
+              ListTile(
+                leading: Icon(Icons.camera),
+                title: Text('Camera'),
+                onTap: () {
+                  Navigator.of(context).pop(ImageSource.camera);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.photo_library),
+                title: Text('Gallery'),
+                onTap: () {
+                  Navigator.of(context).pop(ImageSource.gallery);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    ).then((dialogResult) async {
+      if (dialogResult == null) {
+        return;
       }
+
+      final imageFile = await ImagePicker().pickImage(source: dialogResult);
+      if (imageFile == null) {
+        return;
+      }
+
+      setState(() {
+        _imageFile = File(imageFile.path);
+        _scanning = true;
+      });
+
+      final responseText = await ScanService.scanImage(_imageFile!);
+
+      setState(() {
+        _responseText = responseText;
+        _scanning = false;
+      });
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ScanResult(
+            imageFile: _imageFile!,
+            responseText: _responseText,
+            scanning: _scanning,
+          ),
+        ),
+      );
     });
   }
 
@@ -38,15 +93,16 @@ class _BottomBarState extends State<BottomBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          getImage();
-        },
+        onPressed:
+            _scanning ? null : _selectImage, // Disable button while scanning
         backgroundColor: Color(0xff184A2C),
-        child: Image.asset(
-          'assets/bottomIcon/camera_Icon.png',
-          width: 40,
-          height: 40,
-        ),
+        child: _scanning
+            ? CircularProgressIndicator(color: Color(0xff184A2C),) // Show CircularProgressIndicator while scanning
+            : Image.asset(
+                'assets/bottomIcon/camera_Icon.png',
+                width: 40,
+                height: 40,
+              ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(

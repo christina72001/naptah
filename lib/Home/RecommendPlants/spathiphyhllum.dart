@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/Home/bottom_bar.dart';
+// import 'package:naptah/Home/homePage.dart';
 // import 'package:naptah/mainPage/Home/bottom_bar.dart';
 // import 'package:naptah/mainPage/Home/homePage.dart';
 
-class spathiphyhllum extends StatefulWidget {
+class spathiphyhllum extends StatelessWidget {
   const spathiphyhllum({super.key});
 
-  @override
-  State<spathiphyhllum> createState() => _spathiphyhllumState();
-}
-
-class _spathiphyhllumState extends State<spathiphyhllum> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,14 +33,13 @@ class _spathiphyhllumState extends State<spathiphyhllum> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) => BottomBar()),
               );
             },
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
+      body:  Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
@@ -69,7 +64,7 @@ class _spathiphyhllumState extends State<spathiphyhllum> {
             ],
           ),
         ),
-      ),
+      
     );
   }
 }

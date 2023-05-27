@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:naptah/Scanning/resultScreen.dart';
+import 'package:naptah/Scanning/disease&treatment.dart';
 
 class recommendationScreen extends StatelessWidget {
   const recommendationScreen({super.key});
@@ -17,10 +17,7 @@ class recommendationScreen extends StatelessWidget {
           icon: Icon(Icons.arrow_back_ios),
           color: Color(0xff184A2C),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) =>  resultScreen()),
-            );
+            Navigator.pop(context);
           },
         ),
         title: Padding(
