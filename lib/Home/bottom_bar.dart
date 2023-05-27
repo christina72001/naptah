@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:naptah/Home/homePage.dart';
+import 'package:naptah/My_Plant/myplants.dart';
 import 'package:naptah/Scanning/disease&treatment.dart';
 import 'package:naptah/Scanning/scan_result.dart';
 import 'package:naptah/socialCommunity/Experts/premiumPage.dart';
@@ -24,7 +25,7 @@ class _BottomBarState extends State<BottomBar> {
   int _currentIndex = 0;
   List<Widget> tabs = [
     const HomePage(),
-    const schedule(),
+     my_plants(),
     const HomePageCommunity(),
     const premiumPage()
   ];

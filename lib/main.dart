@@ -34,12 +34,15 @@ class MyApp extends StatelessWidget {
   ],
   locale: Locale("en"),
       builder: DevicePreview.appBuilder,
-      theme: ThemeData(primaryColor: const Color(0xff184A2C)),
-      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+
+        primaryColor: Color(0xff184A2C)
+      ),
+      debugShowCheckedModeBanner: false ,
       // supportedLocales: Languages.all,
-      title: 'Flutter Demo',
+      title: 'Naptah',
       
-      home: last(),
+      home: OnboardingPage(),
     );
     //
   }
